@@ -1,0 +1,13 @@
+<div>
+
+  <accounts-ui></accounts-ui>
+  <check-in-form></check-in-form>
+  <ul>
+    <li *ngFor="#location of locations">
+      {{location.jobName}}
+      <p>{{location.location}}</p>
+      <p>{{location.notes}}</p>
+      <button (click)="removeLocation(location)">X</button>
+    </li>
+  </ul>
+</div>
