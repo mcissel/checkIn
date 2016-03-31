@@ -1,9 +1,21 @@
 <form [ngFormModel]="locationsForm" #f="ngForm" (submit)="addLocation(f.value)">
   <label>Job Name</label>
   <input type="text" ngControl="jobName">
-  <label>Location</label>
-  <input type="text" ngControl="location">
   <label>Notes</label>
   <input type="text" ngControl="notes">
   <button>Add</button>
 </form>
+
+<sebm-google-map
+  [latitude]="centerLat"
+  [longitude]="centerLng"
+  [zoom]="8"
+  (mapClick)="mapClicked($event)">
+  <sebm-google-map-marker
+    *ngIf="lat && lng"
+    [latitude]="lat"
+    [longitude]="lng">
+  </sebm-google-map-marker>
+</sebm-google-map>
+
+<a [routerLink]="['/LocationList', {userId: user._id}]">See locations for {{userName}}</a>

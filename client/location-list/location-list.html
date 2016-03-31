@@ -1,0 +1,24 @@
+<a class="checkIn" [routerLink]="['/CheckInForm']">CheckIn</a>
+
+<sebm-google-map
+  [latitude]="centerLat"
+  [longitude]="centerLng"
+  [zoom]="8"
+  (mapClick)="mapClicked($event)">
+  <div *ngFor="#location of locations">
+    <sebm-google-map-marker
+      *ngIf="location.location.lat && location.location.lng"
+      [latitude]="location.location.lat"
+      [longitude]="location.location.lng">
+    </sebm-google-map-marker>
+  </div>
+</sebm-google-map>
+
+
+<ul id="locations">
+  <li *ngFor="#location of locations">
+    {{location.jobName}}
+    <p>{{location.notes}}</p>
+    <button (click)="removeLocation(location)">X</button>
+  </li>
+</ul>

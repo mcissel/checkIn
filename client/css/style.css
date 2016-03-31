@@ -1,4 +1,18 @@
 .sebm-google-map-container {
   width: 400px;
   height: 400px;
+  float:right;
+}
+
+#locations {
+  float:left;
+  width:300px;
+}
+
+#login-buttons {
+
+}
+
+.checkIn {
+
 }

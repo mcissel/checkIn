@@ -2,25 +2,17 @@
   <accounts-ui></accounts-ui>
   <check-in-form></check-in-form>
 
-  <ul>
-    <li *ngFor="#location of locations">
-      {{location.jobName}}
-      <p>{{location.location}}</p>
-      <p>{{location.notes}}</p>
-      <button (click)="removeLocation(location)">X</button>
-    </li>
-  </ul>
-
 </div>
 
 <sebm-google-map
   [latitude]="centerLat"
   [longitude]="centerLng"
-  [zoom]="8"
-  (mapClick)="mapClicked($event)">
-  <sebm-google-map-marker
-    *ngIf="lat && lng"
-    [latitude]="lat"
-    [longitude]="lng">
-  </sebm-google-map-marker>
+  [zoom]="8">
+  <div *ngFor="#location of locations">
+    <sebm-google-map-marker
+      *ngIf="location.lat"
+      [latitude]="location.lat"
+      [longitude]="location.lng">
+    </sebm-google-map-marker>
+  </div>
 </sebm-google-map>
