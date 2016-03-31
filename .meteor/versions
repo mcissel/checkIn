@@ -8,6 +8,7 @@ babel-compiler@5.8.24_1
 babel-runtime@0.1.4
 barbatus:angular2@0.8.7
 barbatus:ng2-compilers@0.1.1
+barbatus:ng2-google-maps@0.6.1
 barbatus:ng2-meteor-accounts@0.1.6
 barbatus:ng2-meteor-accounts-ui@0.1.3
 barbatus:ts-compilers@0.2.9
